@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import NotFound from './components/NotFound'
 import TopBar from './components/TopBar'
+import PhotosContainer from './components/PhotosContainer'
 
 import './App.css';
 
@@ -14,8 +15,11 @@ class App extends Component {
             <TopBar/>
           </nav>
           <main>
-            <Route exact path="/" render={() => <Redirect to="/photos"/>} />
-            <Route component={NotFound}/>
+            <Switch>
+              <Route path="/photos" component={PhotosContainer}/>
+              <Route exact path="/" render={() => <Redirect to="/photos"/>} />
+              <Route component={NotFound}/>
+            </Switch>
           </main>
         </div>
       </Router>
