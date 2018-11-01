@@ -1,0 +1,49 @@
+
+.main {
+  margin: auto;
+  height: 100vh;
+}
+
+.loadDiv {
+  height: 100vh;
+}
+
+.topBar {
+  background-color: bisque;
+}
+
+.photo-block-container {
+  vertical-align: top;
+  position: relative;
+}
+
+.photoBlock {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 400px;
+  background-color: beige;
+  margin: 20px;
+  padding: 5px;
+}
+
+.blockImage {
+  max-width: 230px;
+}
+
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  position: relative;
+  top: 30vh;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
