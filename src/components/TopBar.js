@@ -5,7 +5,7 @@ class TopBar extends React.PureComponent {
 
   render() {
     return (
-      <div>
+      <div className="topBar">
         <h4>Top bar</h4>
       </div>
     )

@@ -14,7 +14,7 @@ class App extends Component {
           <nav>
             <TopBar/>
           </nav>
-          <main>
+          <main className="main">
             <Switch>
               <Route path="/photos" component={PhotosContainer}/>
               <Route exact path="/" render={() => <Redirect to="/photos"/>} />

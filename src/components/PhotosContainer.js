@@ -3,6 +3,7 @@ import '../css/main.css'
 import {connect} from 'react-redux'
 import {loadPhotos} from '../actions/photos'
 import Loader from './Loader'
+import Photos from './Photos'
 
 class PhotosContainer extends React.PureComponent {
 
@@ -14,13 +15,7 @@ class PhotosContainer extends React.PureComponent {
     const {photos} = this.props
     if (!photos.data) return <Loader/>
     return (
-      <div>
-        {photos.data.map(photo => (
-          <div key={photo.id}>
-            <div>{photo.attributes.title}</div>
-          </div>
-        ))}
-      </div>
+      <Photos photos={this.props.photos} />
     )
   }
 }
