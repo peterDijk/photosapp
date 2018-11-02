@@ -11,6 +11,7 @@ const camerasLoaded = (data, included) => ({
 export const loadCameras = () => {
   return async (dispatch, getState) => {
     try {
+      
       const fields = `fields[node--cameras]=title,body,field_brand`
       const include = `include=field_brand`
       const requestUrl = `${apiUrl}/node/cameras?${fields}&${include}`

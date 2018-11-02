@@ -10,11 +10,22 @@
 
 .topBar {
   background-color: bisque;
+  position: absolute;
+  top:0px;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+}
+
+.topBar h4 {
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .photo-block-container {
   vertical-align: top;
   position: relative;
+  top: 100px;
 }
 
 .photoBlock {

@@ -1,8 +1,10 @@
 import * as React from 'react'
 import {imagesBaseUrl} from '../constants'
+import Loader from './Loader'
 
 function Photos(props) {
   const {photos} = props
+  if (!photos.data) return <Loader size='normal'/>
   return (
     <div className="photo-block-container">
     {photos.data.map(photo => {

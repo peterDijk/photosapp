@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import './css/main.css'
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import NotFound from './components/NotFound'
-import TopBarContainer from './components/TopBar'
+import TopBarContainer from './components/TopBarContainer'
 import PhotosContainer from './components/PhotosContainer'
 
 import './App.css';

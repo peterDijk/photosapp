@@ -1,9 +1,9 @@
 import * as React from 'react'
 import {connect} from 'react-redux'
-import {loadFilteredPhotos} from '../actions/photos'
+import {loadFilteredPhotos, loadPhotos} from '../actions/photos'
 import {loadCameras} from '../actions/cameras'
 import TopBar from './TopBar'
-import Loader from './Loader'
+
 
 class TopBarContainer extends React.PureComponent {
 
@@ -11,9 +11,20 @@ class TopBarContainer extends React.PureComponent {
     this.props.loadCameras()
   }
 
+  filterChangeHandler = (event) => {
+    if (event.target.value === 'clear') {
+      this.props.loadPhotos()
+    } else {
+      this.props.loadFilteredPhotos(`field_${event.target.name}`, event.target.value)
+    }
+  }
+
   render() {
     return (
-      <TopBar cameras={this.props.cameras}/>
+      <TopBar 
+        cameras={this.props.cameras}
+        filterChangeHandler={this.filterChangeHandler}
+      />
     )
   }
 }
@@ -24,7 +35,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   loadCameras,
-  loadFilteredPhotos
+  loadFilteredPhotos,
+  loadPhotos
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopBarContainer)
