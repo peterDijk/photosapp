@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import NotFound from './components/NotFound'
-import TopBar from './components/TopBar'
+import TopBarContainer from './components/TopBar'
 import PhotosContainer from './components/PhotosContainer'
 
 import './App.css';
@@ -12,7 +12,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <nav>
-            <TopBar/>
+            <TopBarContainer/>
           </nav>
           <main className="main">
             <Switch>

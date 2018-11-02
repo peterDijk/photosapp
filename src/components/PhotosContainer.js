@@ -15,7 +15,9 @@ class PhotosContainer extends React.PureComponent {
     const {photos} = this.props
     if (!photos.data) return <Loader/>
     return (
-      <Photos photos={this.props.photos} />
+      <Photos 
+        photos={this.props.photos} 
+      />
     )
   }
 }
