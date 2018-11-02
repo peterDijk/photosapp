@@ -2,6 +2,7 @@ import axios from 'axios'
 import {apiUrl} from '../constants'
 
 export const PHOTOS_FETCHED = 'PHOTOS_FETCHED'
+export const CLEAR_PHOTOS = 'CLEAR_PHOTOS'
 
 const photosLoaded = (data,included) => ({
   type: PHOTOS_FETCHED,
@@ -26,6 +27,8 @@ export const loadPhotos = () => {
 
 export const loadFilteredPhotos = (field, uuid) => {
   return async (dispatch, getState) => {
+    const state = getState()
+    if (state.photos.data) dispatch({type: CLEAR_PHOTOS})
     try {
       const filterPath = `filter[${field}][condition][path]=${field}.uuid`
       const filterValue = `filter[${field}][condition][value]=${uuid}`
