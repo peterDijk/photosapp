@@ -4,7 +4,7 @@ import {loadPhotos} from '../actions/photos'
 import {loadCameras} from '../actions/cameras'
 import {loadPhotographers} from '../actions/photographers'
 import {loadBrands} from '../actions/brands'
-import {addFilter} from '../actions/filters'
+import {addFilter,clearAllFilters} from '../actions/filters'
 import TopBar from './TopBar'
 
 
@@ -17,7 +17,9 @@ class TopBarContainer extends React.PureComponent {
   }
 
   filterChangeHandler = (event) => {
+    if (event.target.value !== 'clear') {
       this.props.addFilter(`field_${event.target.name}`, event.target.value)
+    }
   }
 
   render() {
@@ -27,6 +29,7 @@ class TopBarContainer extends React.PureComponent {
         photographers={this.props.photographers}
         brands={this.props.brands}
         filterChangeHandler={this.filterChangeHandler}
+        clearAllFilters={this.props.clearAllFilters}
       />
     )
   }
@@ -43,7 +46,8 @@ const mapDispatchToProps = {
   loadPhotos,
   loadPhotographers,
   loadBrands,
-  addFilter
+  addFilter,
+  clearAllFilters
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopBarContainer)

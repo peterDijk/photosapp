@@ -26,7 +26,7 @@ function TopBar(props) {
               })
             }
         </select>
-        <select type="select" name="brand" onChange={props.filterChangeHandler}>
+        <select type="select" name="camera.field_brand" onChange={props.filterChangeHandler}>
             <option value='clear'>no brand filter </option>
             {(brands.data && brands.data.length > 0) &&
               brands.data.map(brand => {
@@ -36,7 +36,7 @@ function TopBar(props) {
               })
             }
         </select>
-
+        <button onClick={props.clearAllFilters}>clear filters</button>
       </div>
     )
   }
