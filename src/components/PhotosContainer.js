@@ -5,13 +5,18 @@ import Photos from './Photos'
 
 class PhotosContainer extends React.PureComponent {
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.loadPhotos()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.filters !== this.props.filters) {
+      this.props.loadPhotos()
+    }
   }
 
   render() {
     const {photos} = this.props
-    // if (!photos.data) return <Loader/>
     return (
       <Photos 
         photos={photos} 
@@ -21,7 +26,8 @@ class PhotosContainer extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  photos: state.photos
+  photos: state.photos,
+  filters: state.filters
 })
 
 const mapDispatchToProps = {
