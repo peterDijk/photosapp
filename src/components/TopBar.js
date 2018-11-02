@@ -1,5 +1,4 @@
 import * as React from 'react'
-import Loader from './Loader'
 
 
 function TopBar(props) {
