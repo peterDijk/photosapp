@@ -5,9 +5,22 @@
   text-align: center;
   border-radius: .3rem;
   box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+  width: 25rem;
+  height: 30rem;
+  // display: inline-block;
+  margin-bottom: 5rem;
+  margin-top: 0;
+
+  &:not(:last-child) {
+    margin-right: 5rem;
+  }
+  float: left;
+
+  
 
   &__image-box {
-    width: 50%;
+    width: 100%;
+    // box-shadow: 0 .5rem 2rem rgba($color-black, .15);
   }
 
   &__text-box {
