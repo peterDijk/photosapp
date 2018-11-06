@@ -4,10 +4,14 @@ import Loader from './Loader'
 
 function Photos(props) {
   const {photos} = props
-  if (!photos.data) return <Loader size='normal'/>
+  if (!photos.data) return (
+      <section className="section-photos">
+        <Loader size='normal'/>
+      </section>
+    )
   return (
     <section className="section-photos">
-      <div className="section-photos__content">
+      {/* <div className="section-photos__content"> */}
         {photos.data.map(photo => {
           const relImageData = photo.relationships.field_image.data
           const relPhotographerData = photo.relationships.field_photographer.data
@@ -21,7 +25,7 @@ function Photos(props) {
           return (
           <div key={photo.id} className="photo-block">
             <div className="photo-block__image-box">
-              <img src={`${imagesBaseUrl}${imageResource.attributes.uri.url}`} alt={relImageData.meta.alt} className="photo-block__image-box photo-block__image-box-image"/>
+              <img src={`${imagesBaseUrl}${imageResource.attributes.uri.url}`} alt={relImageData.meta.alt} className="photo-block__image-box"/>
             </div>
             <div className="photo-block__text-box">
               <p>Title: {photo.attributes.title}</p>
@@ -31,7 +35,7 @@ function Photos(props) {
             </div>
           </div>
         )})}
-     </div>
+     {/* </div> */}
     </section>
   )
 }

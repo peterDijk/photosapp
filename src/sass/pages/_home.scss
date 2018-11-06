@@ -1,13 +1,15 @@
 .section-photos {
   background-color: $color-grey-light-2;
   padding: 5vw;
+  margin-top: 2rem;
   // text-align: center;
+  @include clearfix;
 
-  &__content {
-    margin: 0 auto;
-    width: 80vw;
-    // padding: 0 2%;
-    text-align: center;
-    @include clearfix;
-  }
+  // &__content {
+  //   margin: 0 auto;
+  //   width: 80vw;
+  //   // padding: 0 2%;
+  //   text-align: center;
+    
+  // }
 }

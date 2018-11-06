@@ -12,6 +12,12 @@ body {
   box-sizing: border-box;
   padding: 3rem; }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
@@ -26,7 +32,7 @@ body {
   border-radius: .3rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   width: 25rem;
-  height: 30rem;
+  height: 35rem;
   margin-bottom: 5rem;
   margin-top: 0;
   float: left; }
@@ -37,9 +43,43 @@ body {
   .photo-block__text-box {
     font-size: 1.5rem; }
 
+.loader {
+  /* border: 8px solid #f3f3f3; /* Light grey */
+  /* border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  /* width: 60px; */
+  /* height: 60px; */
+  animation: spin 2s linear infinite;
+  margin: auto;
+  position: relative;
+  /* top: 30vh; */ }
+
+.loader-normal {
+  border: 8px solid #f3f3f3;
+  /* Light grey */
+  border-top: 8px solid #3498db;
+  /* Blue */
+  width: 60px;
+  height: 60px; }
+
+.loader-small {
+  border: 2px solid #f3f3f3;
+  /* Light grey */
+  border-top: 2px solid #3498db;
+  /* Blue */
+  width: 20px;
+  height: 20px; }
+
 .header {
+  position: relative;
   height: 10rem;
   background-color: #f7f7f7; }
+  .header__nav {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 30%; }
 
 .row {
   max-width: 114rem;
@@ -69,12 +109,9 @@ body {
 
 .section-photos {
   background-color: #c7c7c7;
-  padding: 5vw; }
-  .section-photos__content {
-    margin: 0 auto;
-    width: 80vw;
-    text-align: center; }
-    .section-photos__content::after {
-      content: '';
-      display: table;
-      clear: both; }
+  padding: 5vw;
+  margin-top: 2rem; }
+  .section-photos::after {
+    content: '';
+    display: table;
+    clear: both; }

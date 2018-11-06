@@ -4,12 +4,13 @@
 @import "abstracts/variables";
 
 @import "base/base";
-// @import "base/animations";
+@import "base/animations";
 @import "base/typography";
 // @import "base/utitilies";
 
 // @import "components/button";
 @import "components/photoblock";
+@import "components/loader";
 
 @import "layout/header";
 @import "layout/grid";

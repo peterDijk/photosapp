@@ -6,15 +6,16 @@
   border-radius: .3rem;
   box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
   width: 25rem;
-  height: 30rem;
-  // display: inline-block;
+  height: 35rem;
   margin-bottom: 5rem;
   margin-top: 0;
+  float: left;
 
   &:not(:last-child) {
     margin-right: 5rem;
+    
   }
-  float: left;
+  
 
   
 
