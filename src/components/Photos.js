@@ -6,7 +6,7 @@ function Photos(props) {
   const {photos} = props
   if (!photos.data) return <Loader size='normal'/>
   return (
-    <div className="photo-block-container">
+    <section className="photos-box">
     {photos.data.map(photo => {
       const relImageData = photo.relationships.field_image.data
       const relPhotographerData = photo.relationships.field_photographer.data
@@ -18,11 +18,11 @@ function Photos(props) {
       const brandResource = photos.included.find(obj => obj.id === cameraResource.relationships.field_brand.data.id)
       // console.log(cameraResource.relationships.field_brand.data)
       return (
-      <div key={photo.id} className="photoBlock">
-        <div className="blockImage-container">
-          <img src={`${imagesBaseUrl}${imageResource.attributes.uri.url}`} alt={relImageData.meta.alt} className="blockImage"/>
+      <div key={photo.id} className="photo-block">
+        <div className="photo-block__image-box">
+          <img src={`${imagesBaseUrl}${imageResource.attributes.uri.url}`} alt={relImageData.meta.alt} className="photo-block__image-box photo-block__image-box-image"/>
         </div>
-        <div className="imageInfo-container">
+        <div className="photo-block__text-box">
           <p>Title: {photo.attributes.title}</p>
           <p>by: {photographerResource.attributes.title}</p>
           <p>camera: {brandResource.attributes.title} {cameraResource.attributes.title}</p> 
@@ -30,7 +30,7 @@ function Photos(props) {
         </div>
       </div>
     )})}
-  </div>
+  </section>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './css/main.css'
+// import './css/main.css'
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import NotFound from './components/NotFound'
 import TopBarContainer from './components/TopBarContainer'
@@ -12,9 +12,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <nav>
-            <TopBarContainer/>
-          </nav>
+          <header className="header">
+            <nav className="nav">
+              <TopBarContainer/>
+            </nav>
+          </header>
           <main className="main">
             <Switch>
               <Route path="/photos" component={PhotosContainer}/>

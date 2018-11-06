@@ -1,0 +1,16 @@
+.photo-block {
+  background-color: rgba($color-white, .8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: .3rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+  &__image-box {
+    width: 50%;
+  }
+
+  &__text-box {
+    font-size: 1.5rem;
+  }
+}
