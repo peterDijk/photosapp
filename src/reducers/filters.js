@@ -1,6 +1,5 @@
 import {
   ADD_FILTER,
-  CLEAR_FILTER,
   CLEAR_ALL_FILTERS
 } from '../actions/filters'
 

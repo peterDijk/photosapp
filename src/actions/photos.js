@@ -11,8 +11,11 @@ const photosLoaded = (data,included) => ({
 
 export const loadPhotos = () => {
   return async (dispatch, getState) => {
+    
     const state = getState()
-    const {filters} = state
+    const {filters, photos} = state
+
+    if (photos.data) { dispatch({type: CLEAR_PHOTOS }) }
 
     try {
       let filterPaths = ''

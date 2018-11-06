@@ -35,9 +35,13 @@ body {
   height: 35rem;
   margin-bottom: 5rem;
   margin-top: 0;
-  float: left; }
+  float: left;
+  transition: all .1s; }
   .photo-block:not(:last-child) {
     margin-right: 5rem; }
+  .photo-block:hover {
+    transform: scale(1.01) translateY(-0.3rem);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15); }
   .photo-block__image-box {
     width: 100%; }
   .photo-block__text-box {

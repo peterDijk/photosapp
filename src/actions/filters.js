@@ -1,8 +1,11 @@
+import {CLEAR_PHOTOS} from './photos'
 
 export const ADD_FILTER = 'ADD_FILTER'
 export const REMOVE_FILTER = 'REMOVE_FILTER'
 export const CLEAR_FILTER = 'CLEAR_FILTER'
 export const CLEAR_ALL_FILTERS = 'CLEAR_ALL_FILTERS'
+
+
 
 export const addFilter = (field, value) => {
   const filterPath = `filter[${field}][condition][path]=${field}.uuid`

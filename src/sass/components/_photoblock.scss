@@ -10,13 +10,17 @@
   margin-bottom: 5rem;
   margin-top: 0;
   float: left;
+  transition: all .1s;
 
   &:not(:last-child) {
     margin-right: 5rem;
     
   }
   
-
+  &:hover {
+    transform: scale(1.01) translateY(-.3rem);
+    box-shadow: 0 1rem 3rem rgba($color-black, .15);
+  }
   
 
   &__image-box {
