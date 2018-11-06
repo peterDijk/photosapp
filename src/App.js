@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-// import './css/main.css'
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import NotFound from './components/NotFound'
 import TopBarContainer from './components/TopBarContainer'
 import PhotosContainer from './components/PhotosContainer'
-
-import './App.css';
 
 class App extends Component {
   render() {
@@ -13,11 +10,11 @@ class App extends Component {
       <Router>
         <div className="App">
           <header className="header">
-            <nav className="nav">
+            <nav className="header__nav">
               <TopBarContainer/>
             </nav>
           </header>
-          <main className="main">
+          <main>
             <Switch>
               <Route path="/photos" component={PhotosContainer}/>
               <Route exact path="/" render={() => <Redirect to="/photos"/>} />
