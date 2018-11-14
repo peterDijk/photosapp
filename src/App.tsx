@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import NotFound from './components/NotFound'
 import TopBarContainer from './components/TopBarContainer'
 import PhotosContainer from './components/PhotosContainer'
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <Router>
